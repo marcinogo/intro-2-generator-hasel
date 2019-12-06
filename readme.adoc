@@ -1,0 +1,21 @@
+= Random password generating console tool
+
+Generating strong passwords is something you can do on your own but putting all the combination of lower and upper cases, numbers, symbols can be a tiresome work. Let's automate it!
+
+TIP: if you wish for your password to be truly randomized, read documentation for randomization in Java.
+
+NOTE: ideally, you'd store the password somewhere to NOT have to remember it. You'd also make that storage SAFE. Customary it would be encrypted. While all that is required for a true password generator it's NOT required here.
+
+IMPORTANT: Pure JDK only or plain JShell (even better).
+
+== Requirements
+
+. script accepts parameters
+.. first parameter is int: `12` for password length being 12
+.. second is a boolean: `true` for alphanumeric passwords (no special characters, just digits, letters and whitespace)
+. password length is by default 10 but can be overriden through parameter (above)
+. password length of 8 and less causes a warning to be printed informing us of length being short enough to brute force the attack
+. some websites don't accept special characters, so offer an option to only create alphanumeric passwords
+. program calculates and informs the user of the enthropy behind the password (its strength)
+
+TIP: https://xkcd.com/936/
