@@ -25,18 +25,23 @@ class PassGenerator {
             onlyAlphaNum = Boolean.valueOf(args[1]);
         }
 
-        // TODO: pick random chars from set in given number, pick only alphanum if parameter is true
-        // Set<Character> chars = IntStream
-        //     .rangeClosed(33, 127)
-        //     .boxed()
-        //     .map(i -> Character
-        //     .toChars(i)[0])
-        //     .collect(Collectors.toSet());
-
-        new Random()
-            .ints(passLength, 33, 127)
-            .boxed()
-            .map(i -> Character.toChars(i)[0])
-            .forEach(System.out::print);
+        if(onlyAlphaNum) {
+            ThreadLocalRandom
+                .current()
+                .ints(33,127)
+                .boxed()
+                .map(i -> Character.toChars(i)[0])
+                .filter(i -> Character.isLetterOrDigit(i))
+                .limit(passLength)
+                .forEach(System.out::print);
+        } else {
+            ThreadLocalRandom
+                .current()
+                .ints(33,127)
+                .boxed()
+                .map(i -> Character.toChars(i)[0])
+                .limit(passLength)
+                .forEach(System.out::print);
+        }
     }
 }
