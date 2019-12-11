@@ -22,7 +22,7 @@ class PassGenerator {
         }
 
         if(args.length > 1) {
-            if(!args[1].equalsIgnoreCase("true") || !args[1].equalsIgnoreCase("false")) {
+            if(!args[1].equalsIgnoreCase("true") && !args[1].equalsIgnoreCase("false")) {
                 System.err.println(
                    "You passed wrong second argument! Full set of characters will be use.");
             }
