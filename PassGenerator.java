@@ -17,11 +17,15 @@ class PassGenerator {
             try {
                 passLength = Integer.parseInt(args[0]);
             } catch (NumberFormatException e) {
-                System.err.println("You didn't pass a number. Set length to 10");
+                System.err.println("You didn't pass a number. Password length set to 10.");
             }
         }
 
         if(args.length > 1) {
+            if(!args[1].equalsIgnoreCase("true") || !args[1].equalsIgnoreCase("false")) {
+                System.err.println(
+                   "You passed wrong second argument! Full set of characters will be use.");
+            }
             onlyAlphaNum = Boolean.valueOf(args[1]);
         }
 
@@ -43,5 +47,6 @@ class PassGenerator {
                 .limit(passLength)
                 .forEach(System.out::print);
         }
+	System.out.println();
     }
 }
